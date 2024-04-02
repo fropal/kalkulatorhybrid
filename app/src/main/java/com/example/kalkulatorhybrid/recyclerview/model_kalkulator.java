@@ -1,15 +1,28 @@
 package com.example.kalkulatorhybrid.recyclerview;
 
+import android.app.Activity;
+
 public class model_kalkulator {
 
     String nama;
     String rumus;
     int img;
 
-    public model_kalkulator(String nama, String rumus, int img) {
+    public Activity getActivity() {
+        return activity;
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
+
+    private Activity activity;
+
+    public model_kalkulator(String nama, String rumus, int img,Activity activity) {
         this.nama = nama;
         this.rumus = rumus;
         this.img = img;
+        this.activity = activity;
     }
 
     public String getNama() {

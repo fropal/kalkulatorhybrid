@@ -15,14 +15,11 @@ import android.widget.Toast;
 import com.example.kalkulatorhybrid.recyclerview.SelectListen;
 import com.example.kalkulatorhybrid.recyclerview.model_kalkulator;
 import com.example.kalkulatorhybrid.recyclerview.my_adapter;
-import com.example.kalkulatorhybrid.Activity3D.activity_balok;
+import com.example.kalkulatorhybrid.Activity3D.Activity_balok;
 import com.example.kalkulatorhybrid.Activity3D.Activity_bola;
 import com.example.kalkulatorhybrid.Activity3D.Activity_kubus;
 import com.example.kalkulatorhybrid.Activity3D.Activity_tabung;
 import com.example.kalkulatorhybrid.R;
-import com.example.kalkulatorhybrid.recyclerview.model_kalkulator;
-import com.example.kalkulatorhybrid.recyclerview.SelectListen;
-import com.example.kalkulatorhybrid.recyclerview.my_adapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,10 +38,10 @@ public class Fragment_3D extends Fragment implements SelectListen {
         RecyclerView recyclerView = RootView.findViewById(R.id.recycl);
         List<model_kalkulator> shape = new ArrayList<>();
 
-        shape.add( new model_kalkulator("Kubus", "6 x (Sisi X Sisi)" ,R.drawable.cube));
-        shape.add( new model_kalkulator("Balok", "2 x (pl + lt + pt)" ,R.drawable.cube));
-        shape.add( new model_kalkulator("Tabung", "t" ,R.drawable.cube));
-        shape.add( new model_kalkulator("Bola", "t" ,R.drawable.cube));
+        shape.add( new model_kalkulator("Kubus", "6 x (Sisi X Sisi)" ,R.drawable.cube,new Activity_kubus()));
+        shape.add( new model_kalkulator("Balok", "2 x (pl + lt + pt)" ,R.drawable.cube,new Activity_balok()));
+        shape.add( new model_kalkulator("Tabung", "2 x π x r x (r + t)" ,R.drawable.cube,new Activity_tabung()));
+        shape.add( new model_kalkulator("Bola", "4 x π x r²" ,R.drawable.cube,new Activity_bola()));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new my_adapter(getActivity(), shape, this));
@@ -53,10 +50,8 @@ public class Fragment_3D extends Fragment implements SelectListen {
 
     @Override
     public void OnKlik(model_kalkulator holding) {
-        String nama = holding.getNama();
-        Toast.makeText(getActivity(), nama, Toast.LENGTH_SHORT).show();
-
-
-
+        Intent I = new Intent(getContext(),holding.getActivity().getClass());
+        startActivity(I);
     }
+
 }

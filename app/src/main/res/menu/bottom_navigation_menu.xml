@@ -3,13 +3,13 @@
     <item
         android:id="@+id/menu_item1"
         android:title="Bangun Ruang"
-        android:icon="@android:drawable/ic_menu_call"/>
+        android:icon="@drawable/dua"/>
     <item
         android:id="@+id/menu_item2"
         android:title="Bangun Datar"
-        android:icon="@android:drawable/ic_menu_save"/>
+        android:icon="@drawable/tiga"/>
     <item
         android:id="@+id/menu_item3"
         android:title="Profil"
-        android:icon="@android:drawable/ic_menu_camera"/>
+        android:icon="@drawable/profile"/>
 </menu>

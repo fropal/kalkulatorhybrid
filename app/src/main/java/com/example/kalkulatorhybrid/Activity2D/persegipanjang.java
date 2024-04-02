@@ -1,4 +1,4 @@
-package com.example.kalkulatorhybrid.Activity3D;
+package com.example.kalkulatorhybrid.Activity2D;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,33 +10,32 @@ import android.widget.TextView;
 
 import com.example.kalkulatorhybrid.R;
 
-public class Activity_bola extends AppCompatActivity {
+public class persegipanjang extends AppCompatActivity {
 
-    EditText diameter;
+    EditText panjang, lebar;
     Button button, kembali;
     TextView hasil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bola);
+        setContentView(R.layout.activity_persegipanjang);
 
-        diameter = findViewById(R.id.diameter);
+        panjang = findViewById(R.id.panjang);
+        lebar = findViewById(R.id.lebar);
         button = findViewById(R.id.button);
         hasil = findViewById(R.id.TVhasil);
         kembali = findViewById(R.id.kembali);
 
-        if (diameter.getText().toString() == null){
+        if (lebar.getText().toString() == null && panjang.getText().toString() == null ){
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 double hsl = 0;
-                double di = Float.parseFloat(diameter.getText().toString());
-                di = di /2;
-                double phi = 3.14;
-                hsl = 4 * phi * di * di;
-                hasil.setText(String.valueOf("Luas Permukaan Bola : "+hsl+"CM²"));
-
+                double p = Float.parseFloat(panjang.getText().toString());
+                float l = Float.parseFloat(lebar.getText().toString());
+                hsl  =p * l;
+                hasil.setText(String.valueOf("Luas Permukaan Persegi Panjang : "+hsl+"CM²"));
             }
         });
         }
@@ -46,6 +45,5 @@ public class Activity_bola extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

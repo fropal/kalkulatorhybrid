@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity3D.Activity_balok">
+    tools:context=".Activity2D.lingkaran">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kalkulator Menghitung Luas Permukaaan Balok"
-            android:textSize="16dp"
+            android:text="Kalkulator Menghitung Luas linkaran"
+            android:textSize="17dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +33,7 @@
         android:id="@+id/TVrumus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="L = 2 x [(p x l) + (p x t) + (l x t)]"
+        android:text="L = π x r²"
         app:layout_constraintTop_toBottomOf="@id/topPanel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,14 +42,15 @@
         android:textStyle="bold"/>
 
 
+
     <TextView
-        android:id="@+id/TVlebar"
+        android:id="@+id/TVsisi"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="40dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="masukkan lebar balok di sini"
+        android:text="masukkan jari jari lingkaran di sini"
         android:textSize="17dp"
-        android:layout_marginHorizontal="40dp"
         app:layout_constraintTop_toBottomOf="@id/TVrumus"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +58,7 @@
         />
 
     <EditText
-        android:id="@+id/lebar"
+        android:id="@+id/jari"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="40dp"
         android:layout_height="50dp"
@@ -67,80 +68,18 @@
         android:padding="13dp"
         android:textColor="#000000"
         android:inputType="number"
-        android:hint="Lebar"
+        android:hint="jari jari"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TVlebar"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:id="@+id/TVpanjang"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="40dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="masukkan panjang balok di sini"
-        android:textSize="17dp"
-        app:layout_constraintTop_toBottomOf="@id/lebar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/black"
-        />
-
-    <EditText
-        android:id="@+id/panjang"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="40dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:background="#45F1832F"
-        android:padding="13dp"
-        android:textColor="#000000"
-        android:inputType="number"
-        android:hint="Panjang"
-        app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TVpanjang"/>
-    <TextView
-        android:id="@+id/TVtinggi"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="40dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="masukkan tinggi balok di sini"
-        android:textSize="17dp"
-        app:layout_constraintTop_toBottomOf="@id/panjang"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/black"
-        />
-
-    <EditText
-        android:id="@+id/tinggi"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="40dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:background="#45F1832F"
-        android:padding="13dp"
-        android:textColor="#000000"
-        android:inputType="number"
-        android:hint="Tinggi"
-        app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TVtinggi"/>
+        app:layout_constraintTop_toBottomOf="@id/TVsisi"/>
 
     <Button
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:text="Hitung"
         android:id="@+id/button"
-        app:layout_constraintTop_toBottomOf="@id/tinggi"
+        app:layout_constraintTop_toBottomOf="@id/jari"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:cornerRadius="15dp"
@@ -155,7 +94,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:textSize="20dp"/>
 
     <Button

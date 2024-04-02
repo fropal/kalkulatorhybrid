@@ -1,4 +1,4 @@
-package com.example.kalkulatorhybrid.Activity3D;
+package com.example.kalkulatorhybrid.Activity2D;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,33 +10,32 @@ import android.widget.TextView;
 
 import com.example.kalkulatorhybrid.R;
 
-public class Activity_bola extends AppCompatActivity {
+public class segitiga extends AppCompatActivity {
 
-    EditText diameter;
+    EditText tinggi, alas;
     Button button, kembali;
     TextView hasil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bola);
+        setContentView(R.layout.activity_segitiga);
 
-        diameter = findViewById(R.id.diameter);
+        tinggi = findViewById(R.id.tinggi);
+        alas = findViewById(R.id.alas);
         button = findViewById(R.id.button);
         hasil = findViewById(R.id.TVhasil);
         kembali = findViewById(R.id.kembali);
 
-        if (diameter.getText().toString() == null){
+        if (alas.getText().toString() == null && tinggi.getText().toString() == null){
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 double hsl = 0;
-                double di = Float.parseFloat(diameter.getText().toString());
-                di = di /2;
-                double phi = 3.14;
-                hsl = 4 * phi * di * di;
-                hasil.setText(String.valueOf("Luas Permukaan Bola : "+hsl+"CM²"));
-
+                double t = Float.parseFloat(tinggi.getText().toString());
+                double a = Float.parseFloat(alas.getText().toString());
+                hsl  = 0.5 * t * a;
+                hasil.setText(String.valueOf("Luas Permukaan segitiga : "+hsl+"CM²"));
             }
         });
         }
@@ -46,6 +45,5 @@ public class Activity_bola extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

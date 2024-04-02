@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Kalkulatorhybrid"
         tools:targetApi="31">
         <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".Activity2D.lingkaran"
+            android:exported="false" />
+        <activity
+            android:name=".Activity2D.segitiga"
+            android:exported="false" />
+        <activity
+            android:name=".Activity2D.persegipanjang"
+            android:exported="false" />
+        <activity
+            android:name=".Activity2D.kotak"
+            android:exported="false" />
+        <activity
             android:name=".Activity3D.Activity_kubus"
             android:exported="false" />
         <activity
@@ -22,7 +37,7 @@
             android:name=".Activity3D.Activity_tabung"
             android:exported="false" />
         <activity
-            android:name=".Activity_balok"
+            android:name=".Activity3D.Activity_balok"
             android:exported="false"
             android:label="@string/title_activity_balok"
             android:theme="@style/Theme.Kalkulatorhybrid" />
